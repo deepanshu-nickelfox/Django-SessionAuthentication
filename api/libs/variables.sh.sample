@@ -1,0 +1,6 @@
+# Redis Config
+export HIRE_API_REDIS_HOST="localhost"
+export HIRE_API_REDIS_PORT="6379"
+export HIRE_API_REDIS_DB="0"
+export HIRE_API_REDIS_PASSWORD="enter-your-password-here"
+
