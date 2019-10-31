@@ -1,6 +1,7 @@
 # python imports
 import logging
 import datetime
+from celery import shared_task
 
 # django level imports
 from django.core.mail import EmailMessage,send_mail
@@ -9,8 +10,10 @@ from django.core.mail import EmailMessage,send_mail
 from api.settings import EMAIL_HOST_USER
 
 
+
 logger = logging.getLogger(__name__)
 
+@shared_task
 def sendmail(message,subject,tolist):
 	try:
 		send_mail(subject, message, EMAIL_HOST_USER, tolist)

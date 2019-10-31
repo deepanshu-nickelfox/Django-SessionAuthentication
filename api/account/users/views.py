@@ -125,7 +125,7 @@ class UserViewSet(GenericViewSet):
             send mail.
             """
             subject = 'G-store otp'
-            mail.sendmail(message.txt_otp_message(otp), subject, [email])
+            mail.sendmail.delay(message.txt_otp_message(otp), subject, [email])
             return Response(({'status':'otp sent to mail'}), status=status.HTTP_200_OK)
         except:
             return Response(BAD_REQUEST, status=status.HTTP_400_BAD_REQUEST)
